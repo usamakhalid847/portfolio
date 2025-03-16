@@ -1273,3 +1273,13 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+@media (max-width: 991.98px) {
+  .portfolio-details .project-detailed-sidebar {
+    order: 1;
+  }
+
+  .portfolio-details .project-image-overview {
+    order: 2;
+  }
+}
