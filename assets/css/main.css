@@ -1202,7 +1202,7 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
-.portfolio-details .portfolio-description p ul {
+.portfolio-details .portfolio-description ul {
   color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
