@@ -777,11 +777,18 @@ section,
   border: 2px solid var(--accent-color);
 }
 
+.resume .cv-download {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
 .resume .cv-download a {
   color: white;
   background-color: #149ddd;
   padding: 8px 30px;
   display: block;
+  width: fit-content;
 }
 
 /*--------------------------------------------------------------
