@@ -777,6 +777,13 @@ section,
   border: 2px solid var(--accent-color);
 }
 
+.resume .cv-download a {
+  color: white;
+  background-color: #149ddd;
+  padding: 8px 30px;
+  display: block;
+}
+
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
