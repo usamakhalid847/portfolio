@@ -1202,6 +1202,10 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
+.portfolio-details .portfolio-description p ul {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
 /*--------------------------------------------------------------
 # Service Details Section
 --------------------------------------------------------------*/
