@@ -256,11 +256,62 @@
       margin-bottom: 0;
     }
 
+    .ier-breakdown-card {
+      background: #fff;
+      border: 1px solid #e9eef2;
+      border-radius: 12px;
+      padding: 24px 22px;
+      height: 100%;
+    }
+
+    .ier-breakdown-card h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ier-dark);
+      margin-bottom: 14px;
+    }
+
+    .ier-breakdown-card h4 i {
+      color: var(--ier-accent);
+      margin-right: 8px;
+      font-size: 17px;
+    }
+
+    .ier-breakdown-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .ier-breakdown-card ul li {
+      position: relative;
+      padding: 6px 0 6px 18px;
+      font-size: 13.5px;
+      color: #5a646e;
+      line-height: 1.45;
+      border-bottom: 1px solid #f0f4f7;
+    }
+
+    .ier-breakdown-card ul li:last-child {
+      border-bottom: none;
+    }
+
+    .ier-breakdown-card ul li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 13px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--ier-accent);
+    }
+
     /* Comparison table */
     .ier-compare-table {
       background: #fff;
       border-radius: 12px;
-      overflow: hidden;
+      overflow: auto;
       box-shadow: 0 6px 26px rgba(23, 59, 108, 0.08);
     }
 
@@ -722,86 +773,205 @@
         <div class="row gy-4">
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="ier-feature-card">
-              <i class="bi bi-emoji-smile"></i>
-              <h4>Up to 12 Custom Emojis</h4>
-              <p>Choose from a searchable emoji catalog, apply quick presets (Facebook-style, Minimal, and more), or define custom emoji sets per post or per shortcode.</p>
+              <i class="bi bi-database"></i>
+              <h4>Custom Reaction Database</h4>
+              <p>A dedicated, indexed reaction table stores post ID, emoji ID, user/guest identity, IP hash and timestamp — built for performance, reporting and clean migrations.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
             <div class="ier-feature-card">
-              <i class="bi bi-bar-chart-line"></i>
-              <h4>Analytics Dashboard</h4>
-              <p>Track total reactions, daily trends, per-emoji breakdowns and your most-reacted content — with date filters and one-click CSV exports.</p>
+              <i class="bi bi-grid-1x2"></i>
+              <h4>Gutenberg Block</h4>
+              <p>Drop the Emoji Reactions block into any post or page, then control layout, totals and visibility directly from the Block Editor — no shortcode required.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="ier-feature-card">
-              <i class="bi bi-lightning-charge"></i>
-              <h4>Full Cache Compatibility</h4>
-              <p>Counts, the visitor's own vote and security tokens are refreshed after page load, so full-page caching plugins never show stale reactions.</p>
+              <i class="bi bi-magic"></i>
+              <h4>Automatic Placement</h4>
+              <p>Show reactions before or after content on posts, pages, WooCommerce products and public custom post types. Shortcode and block placement always take priority when present.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
             <div class="ier-feature-card">
-              <i class="bi bi-cart3"></i>
-              <h4>WooCommerce, bbPress &amp; BuddyPress</h4>
-              <p>Add reactions to product pages, product reviews, forum topics and replies, and activity stream items — each integration individually toggleable.</p>
+              <i class="bi bi-emoji-smile"></i>
+              <h4>Custom Emoji Sets</h4>
+              <p>Pick up to 12 emojis from a searchable catalog, apply quick presets (Facebook-style, Minimal, Like/Love/Laugh), reorder them, or override the set per post or shortcode.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
             <div class="ier-feature-card">
-              <i class="bi bi-palette"></i>
-              <h4>Layouts &amp; Style Presets</h4>
-              <p>Horizontal, vertical or compact layouts with 5 style presets — including Facebook pill and Slack styles — plus custom colors via simple settings.</p>
+              <i class="bi bi-bar-chart-line"></i>
+              <h4>Advanced Analytics Dashboard</h4>
+              <p>Unlimited storage with site-wide metrics, engagement rate, per-post reports, emoji breakdowns, visual charts, date filters and top-content rankings.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="350">
             <div class="ier-feature-card">
-              <i class="bi bi-shield-lock"></i>
-              <h4>Anti-Abuse &amp; Privacy Controls</h4>
-              <p>Rate limiting, per-IP guest caps, bot exclusion, login-only mode, GDPR mode (no IP storage), automatic data retention cleanup and an optional clean uninstall.</p>
+              <i class="bi bi-file-earmark-spreadsheet"></i>
+              <h4>CSV Export</h4>
+              <p>Export site summaries, per-post reaction reports and raw reaction logs as CSV — perfect for deeper analysis outside WordPress.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
             <div class="ier-feature-card">
-              <i class="bi bi-magic"></i>
-              <h4>Flexible Placement</h4>
-              <p>Auto-insert before or after content, use the Gutenberg block or shortcode, or override placement per post — manual placement always wins.</p>
+              <i class="bi bi-cart3"></i>
+              <h4>WooCommerce, bbPress &amp; BuddyPress</h4>
+              <p>Add reactions to product pages and product reviews, forum topics and replies, and BuddyPress activity streams — each integration individually toggleable.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="450">
             <div class="ier-feature-card">
-              <i class="bi bi-people"></i>
-              <h4>"Who Reacted" &amp; Popular Badge</h4>
-              <p>Show a "John, Sarah and 12 others reacted" line and a "Most Popular" emoji badge to add social proof right under your content.</p>
+              <i class="bi bi-hand-index-thumb"></i>
+              <h4>Reaction Toggle &amp; Switching</h4>
+              <p>One reaction per visitor per post. Click the same emoji to remove it, or click another to switch instantly — with loading spinners and disabled states while saving.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
             <div class="ier-feature-card">
-              <i class="bi bi-arrow-repeat"></i>
-              <h4>Seamless Free-to-Pro Migration</h4>
-              <p>Activating Pro safely deactivates the free version and automatically migrates all your existing reactions — nothing is lost.</p>
+              <i class="bi bi-people"></i>
+              <h4>Social Proof Displays</h4>
+              <p>Show live per-emoji counts, an optional "142 Total Reactions" line, a "John, Sarah and 12 others reacted" line, and a "Most Popular" badge.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="550">
             <div class="ier-feature-card">
-              <i class="bi bi-hand-index-thumb"></i>
-              <h4>Smart Reaction Logic</h4>
-              <p>One reaction per visitor per post, enforced at the database level. Clicking the same emoji removes it, clicking another switches it — for both guests and logged-in users.</p>
+              <i class="bi bi-palette"></i>
+              <h4>Design &amp; Live Preview</h4>
+              <p>Horizontal, vertical or compact layouts with Facebook, Modern, Minimal and Slack style presets, custom colors, and a live preview before you save.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
             <div class="ier-feature-card">
-              <i class="bi bi-123"></i>
-              <h4>Totals &amp; Dislike Control</h4>
-              <p>Show an optional "N Total Reactions" line above or below the bar, and hide the dislike emoji globally with a single toggle when you want only positive feedback.</p>
+              <i class="bi bi-shield-lock"></i>
+              <h4>Spam Protection &amp; Privacy</h4>
+              <p>Nonce-secured AJAX, rate limiting, max reactions per IP, bot/crawler exclusion, guest deduplication, GDPR mode, data retention cleanup and optional clean uninstall.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="650">
             <div class="ier-feature-card">
-              <i class="bi bi-code-slash"></i>
-              <h4>Developer Friendly</h4>
-              <p>Shortcode attributes for emojis, layout, style and totals, a Gutenberg block, template usage via <code>do_shortcode()</code>, and filters to customize rendering behavior.</p>
+              <i class="bi bi-lightning-charge"></i>
+              <h4>Performance &amp; Cache Safe</h4>
+              <p>AJAX-powered vanilla JavaScript (no jQuery), optimized queries, and full compatibility with LiteSpeed Cache, WP Rocket and W3 Total Cache.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ier-feature-breakdown mt-5 pt-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="ier-section-title">
+            <h2>Complete Feature Breakdown</h2>
+            <p>Every Pro capability at a glance — so you know exactly what you're getting.</p>
+          </div>
+          <div class="row gy-4">
+            <div class="col-md-6 col-lg-4">
+              <div class="ier-breakdown-card">
+                <h4><i class="bi bi-database"></i> Data &amp; Storage</h4>
+                <ul>
+                  <li>Dedicated custom reaction database table</li>
+                  <li>Stores post ID, emoji ID, user/guest key, IP hash &amp; timestamp</li>
+                  <li>Stable emoji IDs for accurate reporting &amp; migration</li>
+                  <li>One-click migration from the free version</li>
+                  <li>Optional clean uninstall (tables, settings &amp; analytics)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="ier-breakdown-card">
+                <h4><i class="bi bi-layout-text-window"></i> Display &amp; Placement</h4>
+                <ul>
+                  <li>Gutenberg block for the Block Editor</li>
+                  <li>Auto-placement before/after content</li>
+                  <li>Works on posts, pages, products &amp; public CPTs</li>
+                  <li>Enhanced shortcode (hide, totals, emojis, style)</li>
+                  <li>Total reactions summary above or below the bar</li>
+                  <li>Loading spinner &amp; disabled button while saving</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="ier-breakdown-card">
+                <h4><i class="bi bi-sliders"></i> Reaction Controls</h4>
+                <ul>
+                  <li>Toggle a reaction off by clicking again</li>
+                  <li>Switch reactions without page reload</li>
+                  <li>Custom emoji sets &amp; display limits (up to 12)</li>
+                  <li>Presets: Default, Facebook, Minimal, Like/Love/Laugh</li>
+                  <li>Everyone or logged-in users only</li>
+                  <li>Optional dislike button &amp; max reactions per IP</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="ier-breakdown-card">
+                <h4><i class="bi bi-gear"></i> Admin Controls</h4>
+                <ul>
+                  <li>Enable reactions per public post type</li>
+                  <li>Per-post overrides: disable, custom emojis, placement</li>
+                  <li>Emoji manager: enable/disable, reorder, set defaults</li>
+                  <li>Skips non-public types (media, builders, forms, etc.)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="ier-breakdown-card">
+                <h4><i class="bi bi-chat-heart"></i> Social Features</h4>
+                <ul>
+                  <li>"Who reacted" line (e.g. John, Sarah and 12 others)</li>
+                  <li>Live frontend counts per emoji (👍 24, 😍 12…)</li>
+                  <li>"Most Popular" reaction badge</li>
+                  <li>Optional total reactions counter</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="ier-breakdown-card">
+                <h4><i class="bi bi-graph-up"></i> Advanced Analytics</h4>
+                <ul>
+                  <li>Unlimited analytics storage</li>
+                  <li>Site-wide dashboard: totals, posts, top emoji, engagement rate</li>
+                  <li>Per-post analytics &amp; emoji breakdown reports</li>
+                  <li>Visual charts: distribution, engagement &amp; trends</li>
+                  <li>Date filters: today, week, month &amp; custom range</li>
+                  <li>Top content reports &amp; CSV exports</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="ier-breakdown-card">
+                <h4><i class="bi bi-shield-check"></i> Privacy &amp; Security</h4>
+                <ul>
+                  <li>AJAX nonce verification, sanitization &amp; capability checks</li>
+                  <li>Guest deduplication via cookies &amp; IP hashes</li>
+                  <li>Rate limiting &amp; duplicate prevention</li>
+                  <li>Bot &amp; crawler exclusion (Googlebot, Bingbot, etc.)</li>
+                  <li>GDPR-friendly mode with retention controls</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="ier-breakdown-card">
+                <h4><i class="bi bi-speedometer2"></i> Performance</h4>
+                <ul>
+                  <li>AJAX-powered reactions — no page refresh</li>
+                  <li>Vanilla JavaScript — no jQuery dependency</li>
+                  <li>Optimized queries for high-traffic sites</li>
+                  <li>Compatible with LiteSpeed, WP Rocket &amp; W3 Total Cache</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="ier-breakdown-card">
+                <h4><i class="bi bi-puzzle"></i> Integrations &amp; Design</h4>
+                <ul>
+                  <li>WooCommerce products &amp; product reviews</li>
+                  <li>bbPress topics &amp; replies</li>
+                  <li>BuddyPress activity streams</li>
+                  <li>Responsive mobile-friendly layouts</li>
+                  <li>Horizontal, vertical &amp; compact layouts</li>
+                  <li>Style presets + custom colors + live preview</li>
+                  <li>Premium support &amp; updates included</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -926,12 +1096,27 @@
                 <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
               </tr>
               <tr>
+                <td class="feature-name">Custom reaction database with stable emoji IDs</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">One-click free-to-pro data migration</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
                 <td class="feature-name">Custom emoji sets (up to 12, searchable catalog)</td>
                 <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
                 <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
               </tr>
               <tr>
                 <td class="feature-name">Quick emoji presets (Facebook-style, Minimal...)</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Emoji manager (enable/disable, reorder, defaults)</td>
                 <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
                 <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
               </tr>
@@ -946,7 +1131,7 @@
                 <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
               </tr>
               <tr>
-                <td class="feature-name">Custom colors</td>
+                <td class="feature-name">Custom colors with live preview</td>
                 <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
                 <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
               </tr>
@@ -961,7 +1146,22 @@
                 <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
               </tr>
               <tr>
-                <td class="feature-name">Advanced analytics (daily trends, date filters, per-emoji breakdown)</td>
+                <td class="feature-name">Enhanced shortcode (hide, totals, emojis, style)</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Reaction toggle, switching &amp; loading indicators</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Logged-in only mode &amp; max reactions per IP</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Advanced analytics (charts, trends, engagement rate)</td>
                 <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
                 <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
               </tr>
@@ -986,22 +1186,27 @@
                 <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
               </tr>
               <tr>
+                <td class="feature-name">Vanilla JavaScript (no jQuery dependency)</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
                 <td class="feature-name">"Who reacted" line &amp; "Most Popular" badge</td>
                 <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
                 <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
               </tr>
               <tr>
-                <td class="feature-name">Rate limiting, per-IP caps &amp; bot exclusion</td>
+                <td class="feature-name">Rate limiting, bot exclusion &amp; spam protection</td>
                 <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
                 <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
               </tr>
               <tr>
-                <td class="feature-name">GDPR mode &amp; data retention auto-cleanup</td>
+                <td class="feature-name">GDPR mode, data retention &amp; clean uninstall</td>
                 <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
                 <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
               </tr>
               <tr>
-                <td class="feature-name">Priority support</td>
+                <td class="feature-name">Premium support &amp; updates</td>
                 <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
                 <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
               </tr>
