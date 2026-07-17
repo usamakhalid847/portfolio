@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Instant Emoji Reactions Pro - Premium Emoji Reactions Plugin for WordPress</title>
+  <meta content="Instant Emoji Reactions Pro adds AJAX-powered emoji reactions to WordPress posts, pages, WooCommerce products, bbPress and BuddyPress. Custom emoji sets, analytics dashboard, cache-safe, GDPR-ready. Get the Pro version today." name="description">
+  <meta content="WordPress emoji reactions pro plugin, premium emoji reactions for WordPress, post reactions plugin, WooCommerce reactions, bbPress reactions, BuddyPress reactions, WordPress engagement plugin, emoji feedback plugin" name="keywords">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicons -->
+  <link href="https://usamakhalid847.github.io/portfolio/assets/img/favicon.png" rel="icon">
+  <link href="https://usamakhalid847.github.io/portfolio/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://usamakhalid847.github.io/portfolio/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://usamakhalid847.github.io/portfolio/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://usamakhalid847.github.io/portfolio/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="https://usamakhalid847.github.io/portfolio/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="https://usamakhalid847.github.io/portfolio/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="https://usamakhalid847.github.io/portfolio/assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+  <!-- Page-specific styles for the Pro landing page -->
+  <style>
+    :root {
+      --ier-accent: var(--accent-color, #149ddd);
+      --ier-dark: #173b6c;
+    }
+
+    .ier-section-title {
+      text-align: center;
+      padding-bottom: 40px;
+    }
+
+    .ier-section-title h2 {
+      font-size: 30px;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 14px;
+      color: var(--ier-dark);
+    }
+
+    .ier-section-title h2::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--ier-accent);
+      border-radius: 2px;
+    }
+
+    .ier-section-title p {
+      color: #6c757d;
+      max-width: 680px;
+      margin: 10px auto 0;
+    }
+
+    /* Buy Now buttons */
+    .ier-btn-buy {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--ier-accent);
+      color: #fff;
+      font-family: var(--heading-font, "Raleway", sans-serif);
+      font-weight: 700;
+      font-size: 17px;
+      padding: 14px 36px;
+      border-radius: 50px;
+      border: 2px solid var(--ier-accent);
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 24px rgba(20, 157, 221, 0.35);
+      text-decoration: none;
+    }
+
+    .ier-btn-buy:hover {
+      background: #fff;
+      color: var(--ier-accent);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(20, 157, 221, 0.45);
+    }
+
+    .ier-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--ier-dark);
+      font-family: var(--heading-font, "Raleway", sans-serif);
+      font-weight: 600;
+      font-size: 16px;
+      padding: 13px 32px;
+      border-radius: 50px;
+      border: 2px solid var(--ier-dark);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .ier-btn-outline:hover {
+      background: var(--ier-dark);
+      color: #fff;
+    }
+
+    /* Hero */
+    .ier-hero {
+      padding: 70px 0 60px;
+      background: linear-gradient(180deg, #f5fbfe 0%, #ffffff 100%);
+    }
+
+    .ier-hero .badge-version {
+      background: rgba(20, 157, 221, 0.12);
+      color: var(--ier-accent);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 7px 16px;
+      border-radius: 50px;
+      display: inline-block;
+      margin-bottom: 18px;
+    }
+
+    .ier-hero h1 {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--ier-dark);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .ier-hero h1 span {
+      color: var(--ier-accent);
+    }
+
+    .ier-hero .lead {
+      font-size: 18px;
+      color: #55606a;
+      max-width: 760px;
+      margin: 0 auto 28px;
+    }
+
+    .ier-hero .hero-emojis {
+      font-size: 34px;
+      letter-spacing: 8px;
+      margin-bottom: 22px;
+    }
+
+    .ier-hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px 26px;
+      margin-top: 30px;
+      color: #6c757d;
+      font-size: 14px;
+    }
+
+    .ier-hero-meta span i {
+      color: var(--ier-accent);
+      margin-right: 6px;
+    }
+
+    .ier-hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .ier-hero-trust .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      border: 1px solid #e3edf3;
+      border-radius: 50px;
+      padding: 9px 18px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #37424c;
+      box-shadow: 0 4px 14px rgba(23, 59, 108, 0.06);
+    }
+
+    .ier-hero-trust .trust-badge .stars {
+      color: #ffc107;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .ier-hero-trust .trust-badge .stars i {
+      color: #ffc107;
+      font-size: 12px;
+    }
+
+    .ier-hero-trust .trust-badge i {
+      color: var(--ier-accent);
+      font-size: 15px;
+    }
+
+    .ier-hero-trust .trust-badge i.bi-shield-check {
+      color: #2eaf62;
+    }
+
+    /* Feature cards */
+    .ier-feature-card {
+      background: #fff;
+      border: 1px solid #e9eef2;
+      border-radius: 12px;
+      padding: 28px 24px;
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .ier-feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 34px rgba(23, 59, 108, 0.1);
+      border-color: rgba(20, 157, 221, 0.4);
+    }
+
+    .ier-feature-card i {
+      font-size: 30px;
+      color: var(--ier-accent);
+      display: inline-block;
+      margin-bottom: 14px;
+    }
+
+    .ier-feature-card h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ier-dark);
+      margin-bottom: 10px;
+    }
+
+    .ier-feature-card p {
+      font-size: 14.5px;
+      color: #6c757d;
+      margin-bottom: 0;
+    }
+
+    /* Comparison table */
+    .ier-compare-table {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 26px rgba(23, 59, 108, 0.08);
+    }
+
+    .ier-compare-table table {
+      margin-bottom: 0;
+    }
+
+    .ier-compare-table thead th {
+      background: var(--ier-dark);
+      color: #fff;
+      font-family: var(--heading-font, "Raleway", sans-serif);
+      font-size: 16px;
+      padding: 16px 18px;
+      border: none;
+      vertical-align: middle;
+    }
+
+    .ier-compare-table thead th.pro-col {
+      background: var(--ier-accent);
+    }
+
+    .ier-compare-table tbody td {
+      padding: 13px 18px;
+      font-size: 14.5px;
+      vertical-align: middle;
+    }
+
+    .ier-compare-table tbody tr:nth-child(even) {
+      background: #f8fbfd;
+    }
+
+    .ier-compare-table .bi-check-circle-fill {
+      color: #2eaf62;
+      font-size: 17px;
+    }
+
+    .ier-compare-table .bi-x-circle-fill {
+      color: #d0d7dd;
+      font-size: 17px;
+    }
+
+    .ier-compare-table td.feature-name {
+      font-weight: 500;
+      color: #37424c;
+    }
+
+    /* Pricing */
+    .ier-pricing-card {
+      background: #fff;
+      border: 1px solid #e9eef2;
+      border-radius: 14px;
+      padding: 36px 30px;
+      text-align: center;
+      height: 100%;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .ier-pricing-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 38px rgba(23, 59, 108, 0.12);
+    }
+
+    .ier-pricing-card.featured {
+      border: 2px solid var(--ier-accent);
+      box-shadow: 0 16px 38px rgba(20, 157, 221, 0.18);
+    }
+
+    .ier-pricing-card .popular-tag {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--ier-accent);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 50px;
+      white-space: nowrap;
+    }
+
+    .ier-pricing-card h3 {
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--ier-dark);
+      margin-bottom: 6px;
+    }
+
+    .ier-pricing-card .plan-desc {
+      font-size: 13.5px;
+      color: #8a939c;
+      margin-bottom: 22px;
+    }
+
+    .ier-pricing-card .price {
+      font-family: var(--heading-font, "Raleway", sans-serif);
+      color: var(--ier-dark);
+      margin-bottom: 4px;
+    }
+
+    .ier-pricing-card .price .amount {
+      font-size: 46px;
+      font-weight: 800;
+    }
+
+    .ier-pricing-card .price .cents {
+      font-size: 24px;
+      font-weight: 700;
+      vertical-align: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    .ier-pricing-card .price .period {
+      font-size: 15px;
+      color: #8a939c;
+      font-weight: 500;
+    }
+
+    .ier-pricing-card .alt-prices {
+      font-size: 13.5px;
+      color: #8a939c;
+      margin-bottom: 24px;
+    }
+
+    .ier-pricing-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+      text-align: left;
+    }
+
+    .ier-pricing-card ul li {
+      padding: 7px 0;
+      font-size: 14.5px;
+      color: #4a545e;
+    }
+
+    .ier-pricing-card ul li i {
+      color: #2eaf62;
+      margin-right: 9px;
+    }
+
+    .ier-pricing-card .ier-btn-buy,
+    .ier-pricing-card .ier-btn-outline {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .ier-pricing-note {
+      text-align: center;
+      color: #8a939c;
+      font-size: 13.5px;
+      margin-top: 26px;
+    }
+
+    .ier-pricing-note i {
+      color: var(--ier-accent);
+      margin-right: 5px;
+    }
+
+    /* Testimonials */
+    .ier-testimonial-card {
+      background: #fff;
+      border: 1px solid #e9eef2;
+      border-radius: 12px;
+      padding: 28px 26px;
+      height: 100%;
+    }
+
+    .ier-testimonial-card .stars {
+      color: #ffc107;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .ier-testimonial-card p {
+      font-size: 14.5px;
+      color: #4a545e;
+      font-style: italic;
+      margin-bottom: 18px;
+    }
+
+    .ier-testimonial-card .response-note {
+      font-size: 13px;
+      color: #2eaf62;
+      background: rgba(46, 175, 98, 0.08);
+      border-radius: 8px;
+      padding: 9px 12px;
+      margin-bottom: 16px;
+    }
+
+    .ier-testimonial-card .response-note i {
+      margin-right: 5px;
+    }
+
+    .ier-testimonial-card .author small a {
+      color: #8a939c;
+      text-decoration: underline;
+    }
+
+    .ier-testimonial-card .author small a:hover {
+      color: var(--ier-accent);
+    }
+
+    .ier-testimonial-card .author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .ier-testimonial-card .author .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(20, 157, 221, 0.12);
+      color: var(--ier-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .ier-testimonial-card .author strong {
+      display: block;
+      font-size: 14.5px;
+      color: var(--ier-dark);
+    }
+
+    .ier-testimonial-card .author small {
+      color: #8a939c;
+      font-size: 12.5px;
+    }
+
+    /* FAQ */
+    .ier-faq .accordion-item {
+      border: 1px solid #e9eef2;
+      border-radius: 10px !important;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .ier-faq .accordion-button {
+      font-family: var(--heading-font, "Raleway", sans-serif);
+      font-weight: 600;
+      font-size: 15.5px;
+      color: var(--ier-dark);
+      padding: 17px 20px;
+      background: #fff;
+      box-shadow: none;
+    }
+
+    .ier-faq .accordion-button:not(.collapsed) {
+      color: var(--ier-accent);
+      background: #f5fbfe;
+    }
+
+    .ier-faq .accordion-body {
+      font-size: 14.5px;
+      color: #5a646e;
+      padding: 18px 20px;
+    }
+
+    /* Final CTA */
+    .ier-cta {
+      background: linear-gradient(135deg, var(--ier-dark) 0%, #0f4c81 60%, var(--ier-accent) 100%);
+      border-radius: 16px;
+      padding: 56px 40px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .ier-cta h2 {
+      font-size: 30px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .ier-cta p {
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 640px;
+      margin: 0 auto 28px;
+      font-size: 16px;
+    }
+
+    .ier-cta .ier-btn-buy {
+      background: #fff;
+      color: var(--ier-dark);
+      border-color: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .ier-cta .ier-btn-buy:hover {
+      background: transparent;
+      color: #fff;
+    }
+
+    .ier-cta .cta-guarantee {
+      margin: 18px auto 0;
+      font-size: 13.5px;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .ier-cta .cta-guarantee i {
+      margin-right: 6px;
+    }
+
+    .ier-cta .cta-contact {
+      margin: 22px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 14.5px;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 560px;
+    }
+
+    .ier-cta .cta-contact a {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    .ier-cta .cta-contact a:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Keep the long email address readable in the sidebar menu */
+    #navmenu a[href^="mailto:"] {
+      font-size: 13px;
+      letter-spacing: -0.2px;
+    }
+
+    /* Screenshot slider polish */
+    .ier-screenshots .swiper-slide img {
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(23, 59, 108, 0.12);
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      object-position: top center;
+      background: #f5fbfe;
+    }
+
+    .section.light-background-alt {
+      background: #f5fbfe;
+    }
+
+    @media (max-width: 768px) {
+      .ier-hero h1 {
+        font-size: 30px;
+      }
+
+      .ier-hero .lead {
+        font-size: 16px;
+      }
+
+      .ier-cta {
+        padding: 42px 22px;
+      }
+
+      .ier-cta h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="https://usamakhalid847.github.io/portfolio/assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="https://usamakhalid847.github.io/portfolio/" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="https://usamakhalid847.github.io/portfolio/assets/img/logo.png" alt=""> -->
+      <h1 class="sitename">Usama Khalid</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <a href="https://www.linkedin.com/in/usama-khalid-84677720b/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <a href="https://profiles.wordpress.org/usamakhalid14/" target="_blank" class="wordpress"><i class="bi bi-wordpress"></i></a>
+      <a href="https://github.com/usamakhalid847" target="_blank" class="github"><i class="bi bi-github"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#features"><i class="bi bi-stars navicon"></i> Features</a></li>
+        <li><a href="#screenshots"><i class="bi bi-images navicon"></i> Screenshots</a></li>
+        <li><a href="#comparison"><i class="bi bi-table navicon"></i> Free vs Pro</a></li>
+        <li><a href="#pricing"><i class="bi bi-tag navicon"></i> Pricing</a></li>
+        <li><a href="#faq"><i class="bi bi-question-circle navicon"></i> FAQ</a></li>
+        <li><a href="mailto:usamakhalid847@gmail.com"><i class="bi bi-envelope navicon"></i> usamakhalid847@gmail.com</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section class="ier-hero section">
+      <div class="container text-center" data-aos="fade-up">
+        <span class="badge-version">Premium WordPress Plugin</span>
+        <div class="hero-emojis">👍 ❤️ 😂 😮 😢 😡</div>
+        <h1>Instant Emoji Reactions <span>Pro</span></h1>
+        <p class="lead">
+          Boost engagement on your WordPress site with AJAX-powered emoji reactions on posts, pages,
+          WooCommerce products, bbPress forums and BuddyPress activity — complete with custom emoji sets,
+          a powerful analytics dashboard, and full page-cache compatibility.
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a href="https://checkout.freemius.com/plugin/32816/plan/54244/" target="_blank" class="ier-btn-buy">
+            <i class="bi bi-cart-check"></i> Buy Pro Now
+          </a>
+          <a href="https://wordpress.org/plugins/instant-emoji-reactions/" target="_blank" class="ier-btn-outline">
+            <i class="bi bi-wordpress"></i> Try Free Version
+          </a>
+        </div>
+        <div class="ier-hero-trust">
+          <span class="trust-badge">
+            <span class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></span> 4.6 out of 5 on WordPress.org
+          </span>
+          <span class="trust-badge">
+            <i class="bi bi-shield-check"></i> 7-day money-back guarantee
+          </span>
+          <span class="trust-badge">
+            <i class="bi bi-lock-fill"></i> Secure checkout via Freemius
+          </span>
+          <span class="trust-badge">
+            <i class="bi bi-people-fill"></i> Trusted by site owners worldwide
+          </span>
+        </div>
+        <div class="ier-hero-meta">
+          <span><i class="bi bi-check-circle-fill"></i> Works with guests &amp; logged-in users</span>
+          <span><i class="bi bi-lightning-charge-fill"></i> Cache-plugin safe</span>
+          <span><i class="bi bi-shield-check"></i> GDPR-ready</span>
+          <span><i class="bi bi-wordpress"></i> WordPress 5.8+ / PHP 7.4+</span>
+        </div>
+      </div>
+    </section><!-- /Hero Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="section light-background-alt">
+      <div class="container" data-aos="fade-up">
+        <div class="ier-section-title">
+          <h2>Everything You Need to Drive Engagement</h2>
+          <p>Instant Emoji Reactions Pro packs advanced customization, analytics and integrations into one lightweight, performance-optimized plugin.</p>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="ier-feature-card">
+              <i class="bi bi-emoji-smile"></i>
+              <h4>Up to 12 Custom Emojis</h4>
+              <p>Choose from a searchable emoji catalog, apply quick presets (Facebook-style, Minimal, and more), or define custom emoji sets per post or per shortcode.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="ier-feature-card">
+              <i class="bi bi-bar-chart-line"></i>
+              <h4>Analytics Dashboard</h4>
+              <p>Track total reactions, daily trends, per-emoji breakdowns and your most-reacted content — with date filters and one-click CSV exports.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="ier-feature-card">
+              <i class="bi bi-lightning-charge"></i>
+              <h4>Full Cache Compatibility</h4>
+              <p>Counts, the visitor's own vote and security tokens are refreshed after page load, so full-page caching plugins never show stale reactions.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
+            <div class="ier-feature-card">
+              <i class="bi bi-cart3"></i>
+              <h4>WooCommerce, bbPress &amp; BuddyPress</h4>
+              <p>Add reactions to product pages, product reviews, forum topics and replies, and activity stream items — each integration individually toggleable.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="ier-feature-card">
+              <i class="bi bi-palette"></i>
+              <h4>Layouts &amp; Style Presets</h4>
+              <p>Horizontal, vertical or compact layouts with 5 style presets — including Facebook pill and Slack styles — plus custom colors via simple settings.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="350">
+            <div class="ier-feature-card">
+              <i class="bi bi-shield-lock"></i>
+              <h4>Anti-Abuse &amp; Privacy Controls</h4>
+              <p>Rate limiting, per-IP guest caps, bot exclusion, login-only mode, GDPR mode (no IP storage), automatic data retention cleanup and an optional clean uninstall.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="ier-feature-card">
+              <i class="bi bi-magic"></i>
+              <h4>Flexible Placement</h4>
+              <p>Auto-insert before or after content, use the Gutenberg block or shortcode, or override placement per post — manual placement always wins.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="450">
+            <div class="ier-feature-card">
+              <i class="bi bi-people"></i>
+              <h4>"Who Reacted" &amp; Popular Badge</h4>
+              <p>Show a "John, Sarah and 12 others reacted" line and a "Most Popular" emoji badge to add social proof right under your content.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="ier-feature-card">
+              <i class="bi bi-arrow-repeat"></i>
+              <h4>Seamless Free-to-Pro Migration</h4>
+              <p>Activating Pro safely deactivates the free version and automatically migrates all your existing reactions — nothing is lost.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="550">
+            <div class="ier-feature-card">
+              <i class="bi bi-hand-index-thumb"></i>
+              <h4>Smart Reaction Logic</h4>
+              <p>One reaction per visitor per post, enforced at the database level. Clicking the same emoji removes it, clicking another switches it — for both guests and logged-in users.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+            <div class="ier-feature-card">
+              <i class="bi bi-123"></i>
+              <h4>Totals &amp; Dislike Control</h4>
+              <p>Show an optional "N Total Reactions" line above or below the bar, and hide the dislike emoji globally with a single toggle when you want only positive feedback.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="650">
+            <div class="ier-feature-card">
+              <i class="bi bi-code-slash"></i>
+              <h4>Developer Friendly</h4>
+              <p>Shortcode attributes for emojis, layout, style and totals, a Gutenberg block, template usage via <code>do_shortcode()</code>, and filters to customize rendering behavior.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Features Section -->
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="section ier-screenshots">
+      <div class="container" data-aos="fade-up">
+        <div class="ier-section-title">
+          <h2>See It in Action</h2>
+          <p>A clean, intuitive admin experience — from emoji configuration and design settings to analytics and integrations.</p>
+        </div>
+
+        <div class="portfolio-details-slider swiper init-swiper">
+
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+
+          <div class="swiper-wrapper align-items-center">
+
+            <div class="swiper-slide">
+              <a href="assets/img/portfolio/instant-emoji-reactions-pro/emoji-settings-page.webp" class="glightbox" data-gallery="ier-pro-screens">
+                <img src="assets/img/portfolio/instant-emoji-reactions-pro/emoji-settings-page.webp" alt="Instant Emoji Reactions Pro emoji settings page">
+              </a>
+            </div>
+
+            <div class="swiper-slide">
+              <a href="assets/img/portfolio/instant-emoji-reactions-pro/design-settings-page.webp" class="glightbox" data-gallery="ier-pro-screens">
+                <img src="assets/img/portfolio/instant-emoji-reactions-pro/design-settings-page.webp" alt="Instant Emoji Reactions Pro design settings page">
+              </a>
+            </div>
+
+            <div class="swiper-slide">
+              <a href="assets/img/portfolio/instant-emoji-reactions-pro/display-settings-page.webp" class="glightbox" data-gallery="ier-pro-screens">
+                <img src="assets/img/portfolio/instant-emoji-reactions-pro/display-settings-page.webp" alt="Instant Emoji Reactions Pro display settings page">
+              </a>
+            </div>
+
+            <div class="swiper-slide">
+              <a href="assets/img/portfolio/instant-emoji-reactions-pro/analytics-page.webp" class="glightbox" data-gallery="ier-pro-screens">
+                <img src="assets/img/portfolio/instant-emoji-reactions-pro/analytics-page.webp" alt="Instant Emoji Reactions Pro analytics page">
+              </a>
+            </div>
+
+            <div class="swiper-slide">
+              <a href="assets/img/portfolio/instant-emoji-reactions-pro/integration-settings-page.webp" class="glightbox" data-gallery="ier-pro-screens">
+                <img src="assets/img/portfolio/instant-emoji-reactions-pro/integration-settings-page.webp" alt="Instant Emoji Reactions Pro integration settings page">
+              </a>
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section><!-- /Screenshots Section -->
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="section light-background-alt">
+      <div class="container" data-aos="fade-up">
+        <div class="ier-section-title">
+          <h2>Free vs Pro Comparison</h2>
+          <p>The free version covers the essentials — reactions, auto-display and basic analytics. Pro unlocks full customization, advanced analytics, more integrations and cache compatibility.</p>
+        </div>
+
+        <div class="ier-compare-table table-responsive" data-aos="fade-up" data-aos-delay="100">
+          <table class="table">
+            <thead>
+              <tr>
+                <th style="min-width: 260px;">Feature</th>
+                <th class="text-center" style="min-width: 120px;">Free</th>
+                <th class="text-center pro-col" style="min-width: 120px;">Pro</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="feature-name">Emoji reactions on posts, pages &amp; custom post types</td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">WooCommerce product page reactions</td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Guest &amp; logged-in user reactions</td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Real-time AJAX updates (no page refresh)</td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Automatic display per post type (before/after content)</td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Shortcode placement with smart duplicate prevention</td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Basic analytics (totals, tracked posts &amp; popular items)</td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Custom emoji sets (up to 12, searchable catalog)</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Quick emoji presets (Facebook-style, Minimal...)</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Per-post emoji &amp; placement overrides</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Layouts &amp; style presets (Facebook, Slack, Modern...)</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Custom colors</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Total reactions count line &amp; dislike toggle</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Gutenberg block with layout &amp; display options</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Advanced analytics (daily trends, date filters, per-emoji breakdown)</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">CSV exports (summary, per-post, raw logs)</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">WooCommerce review reactions</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">bbPress &amp; BuddyPress integration</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Full page-cache compatibility (fresh counts &amp; votes)</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">"Who reacted" line &amp; "Most Popular" badge</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Rate limiting, per-IP caps &amp; bot exclusion</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">GDPR mode &amp; data retention auto-cleanup</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Priority support</td>
+                <td class="text-center"><i class="bi bi-x-circle-fill"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle-fill"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="150">
+          <a href="https://checkout.freemius.com/plugin/32816/plan/54244/" target="_blank" class="ier-btn-buy">
+            <i class="bi bi-cart-check"></i> Upgrade to Pro
+          </a>
+        </div>
+      </div>
+    </section><!-- /Comparison Section -->
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section">
+      <div class="container" data-aos="fade-up">
+        <div class="ier-section-title">
+          <h2>Simple, Transparent Pricing</h2>
+          <p>All plans include every Pro feature. Pick the plan that matches the number of sites you manage — monthly, annual and lifetime billing available.</p>
+        </div>
+
+        <div class="row gy-4 justify-content-center">
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="ier-pricing-card">
+              <h3>Personal</h3>
+              <div class="plan-desc">Perfect for a single blog or business site</div>
+              <div class="price"><span class="amount">$3</span><span class="cents">.99</span><span class="period">/month</span></div>
+              <div class="alt-prices">or $29.99/year &nbsp;•&nbsp; $49.99 lifetime</div>
+              <ul>
+                <li><i class="bi bi-check-lg"></i> All Pro features included</li>
+                <li><i class="bi bi-check-lg"></i> 1 website</li>
+                <li><i class="bi bi-check-lg"></i> Updates &amp; priority support</li>
+                <li><i class="bi bi-check-lg"></i> Secure checkout via Freemius</li>
+              </ul>
+              <a href="https://checkout.freemius.com/plugin/32816/plan/54244/" target="_blank" class="ier-btn-outline">
+                <i class="bi bi-cart"></i> Get Personal
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="ier-pricing-card featured">
+              <span class="popular-tag">Most Popular</span>
+              <h3>Business</h3>
+              <div class="plan-desc">Great for growing businesses &amp; communities</div>
+              <div class="price"><span class="amount">$6</span><span class="cents">.99</span><span class="period">/month</span></div>
+              <div class="alt-prices">or $49.99/year &nbsp;•&nbsp; $79.99 lifetime</div>
+              <ul>
+                <li><i class="bi bi-check-lg"></i> All Pro features included</li>
+                <li><i class="bi bi-check-lg"></i> 3 websites</li>
+                <li><i class="bi bi-check-lg"></i> Updates &amp; priority support</li>
+                <li><i class="bi bi-check-lg"></i> Secure checkout via Freemius</li>
+              </ul>
+              <a href="https://checkout.freemius.com/plugin/32816/plan/54245/" target="_blank" class="ier-btn-buy">
+                <i class="bi bi-cart-check"></i> Get Business
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="ier-pricing-card">
+              <h3>Agency</h3>
+              <div class="plan-desc">Built for agencies managing client sites</div>
+              <div class="price"><span class="amount">$9</span><span class="cents">.99</span><span class="period">/month</span></div>
+              <div class="alt-prices">or $69.99/year &nbsp;•&nbsp; $99.99 lifetime</div>
+              <ul>
+                <li><i class="bi bi-check-lg"></i> All Pro features included</li>
+                <li><i class="bi bi-check-lg"></i> Unlimited websites</li>
+                <li><i class="bi bi-check-lg"></i> Updates &amp; priority support</li>
+                <li><i class="bi bi-check-lg"></i> Secure checkout via Freemius</li>
+              </ul>
+              <a href="https://checkout.freemius.com/plugin/32816/plan/54246/" target="_blank" class="ier-btn-outline">
+                <i class="bi bi-cart"></i> Get Agency
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="ier-pricing-note" data-aos="fade-up" data-aos-delay="250">
+          <i class="bi bi-shield-check"></i> Every plan comes with a 7-day money-back guarantee. Payments are processed securely by Freemius — cancel or switch plans anytime from your account.
+        </div>
+      </div>
+    </section><!-- /Pricing Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section light-background-alt">
+      <div class="container" data-aos="fade-up">
+        <div class="ier-section-title">
+          <h2>Loved by Site Owners</h2>
+          <p>Real reviews from Instant Emoji Reactions users on WordPress.org.</p>
+        </div>
+
+        <div class="row gy-4 justify-content-center">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="ier-testimonial-card">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>"I was looking for an emoji plugin to use in my project, and installed this instant emoji plugin. It is very user friendly, smooth, and fulfills my functionality. I really recommend it — try it."</p>
+              <div class="author">
+                <div class="avatar">S</div>
+                <div>
+                  <strong>saadaliprofile</strong>
+                  <small><a href="https://wordpress.org/support/topic/simple-and-easy-to-use-478/" target="_blank" rel="noopener">Review on WordPress.org</a></small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="ier-testimonial-card">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>"I like the lightweight settings and the reaction analytics feature. The plugin works very well on my blog website and was easy to set up. It's a great way to encourage reader engagement without affecting performance."</p>
+              <div class="author">
+                <div class="avatar">A</div>
+                <div>
+                  <strong>abdullahdilshad</strong>
+                  <small><a href="https://wordpress.org/support/topic/smooth-performance-and-helpful-analytics/" target="_blank" rel="noopener">Review on WordPress.org</a></small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="ier-testimonial-card">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>"I have been using this plugin for a few weeks. The reactions load smoothly, and the settings are easy to understand. It has been a useful addition without requiring much setup."</p>
+              <div class="author">
+                <div class="avatar">H</div>
+                <div>
+                  <strong>hussainmirza11</strong>
+                  <small><a href="https://wordpress.org/support/topic/simple-smooth-easy-to-use/" target="_blank" rel="noopener">Review on WordPress.org</a></small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
+            <div class="ier-testimonial-card">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>"Works well and is very easy to set up. Looking forward to seeing more features in future updates."</p>
+              <div class="author">
+                <div class="avatar">A</div>
+                <div>
+                  <strong>ahsanjavaid23</strong>
+                  <small><a href="https://wordpress.org/support/topic/love-it-%f0%9f%a4%a9/" target="_blank" rel="noopener">Review on WordPress.org</a></small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="ier-testimonial-card">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i><i class="bi bi-star"></i>
+              </div>
+              <p>"Really like this idea, but having to add the shortcode to all my posts manually is a pain — it would be good to tick a box to add it to all posts."</p>
+              <div class="response-note"><i class="bi bi-reply-fill"></i> The requested auto-display feature was built and released within 24 hours of this review.</div>
+              <div class="author">
+                <div class="avatar">W</div>
+                <div>
+                  <strong>willas00</strong>
+                  <small><a href="https://wordpress.org/support/topic/it-has-potential-5/" target="_blank" rel="noopener">Review on WordPress.org</a></small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Testimonials Section -->
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+      <div class="container" data-aos="fade-up">
+        <div class="ier-section-title">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <div class="ier-faq accordion" id="ierFaqAccordion">
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                    Does it work with caching plugins like WP Rocket, LiteSpeed or W3 Total Cache?
+                  </button>
+                </h3>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#ierFaqAccordion">
+                  <div class="accordion-body">
+                    Yes. After every page load, the plugin fetches fresh reaction counts, your visitor's own vote and a fresh security token in one lightweight background request. Cached pages never show stale reactions, and reacting keeps working even on pages served from old cache entries.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    Can guests (non-logged-in visitors) react?
+                  </button>
+                </h3>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#ierFaqAccordion">
+                  <div class="accordion-body">
+                    Yes. Guests can react out of the box — each visitor gets one reaction per post, and clicking again removes or switches it. If you prefer, you can restrict reactions to logged-in users only, in which case guests see a friendly "log in to react" hint.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                    Will I lose my existing reactions when upgrading from the free version?
+                  </button>
+                </h3>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#ierFaqAccordion">
+                  <div class="accordion-body">
+                    No. Activating Pro automatically deactivates the free version and migrates all your existing reactions into the Pro database in the background. The migration is resumable and can also be re-run manually from the settings page.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                    Where can I place the reaction bar?
+                  </button>
+                </h3>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#ierFaqAccordion">
+                  <div class="accordion-body">
+                    Anywhere you like: automatically before or after your content, via the <code>[instant_emoji_reactions]</code> shortcode, with the Gutenberg block, in theme templates, or on WooCommerce product pages via the summary hook. Per-post overrides let you change placement or hide the bar on individual posts.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                    Is it GDPR compliant?
+                  </button>
+                </h3>
+                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#ierFaqAccordion">
+                  <div class="accordion-body">
+                    The plugin includes a dedicated GDPR mode that stops storing IP hashes for guests entirely, plus a data retention setting that automatically purges reactions older than a period you choose. IP addresses are never stored in plain text — only salted hashes.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                    How does the plugin prevent spam and fake reactions?
+                  </button>
+                </h3>
+                <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#ierFaqAccordion">
+                  <div class="accordion-body">
+                    Multiple layers: security tokens on every action, rate limiting (30 actions per minute per IP), an optional cap on guest reactions per post from a single network, known bot/crawler exclusion, and a database-level rule of one reaction per visitor per post.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                    Will it slow down my site?
+                  </button>
+                </h3>
+                <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#ierFaqAccordion">
+                  <div class="accordion-body">
+                    No. Reactions are stored in a dedicated, indexed database table, counts are cached, and the frontend loads a single small script and stylesheet. All updates happen via lightweight AJAX requests without page reloads.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                    How do license and payments work?
+                  </button>
+                </h3>
+                <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#ierFaqAccordion">
+                  <div class="accordion-body">
+                    Purchases are handled securely through Freemius, a trusted platform for WordPress plugins. You can choose monthly, annual or lifetime billing, manage your license from your Freemius account, and cancel or switch plans at any time. Every purchase is also covered by a 7-day money-back guarantee — if the plugin isn't right for you, you get a full refund, no questions asked.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /FAQ Section -->
+
+    <!-- Final CTA Section -->
+    <section class="section">
+      <div class="container" data-aos="zoom-in">
+        <div class="ier-cta">
+          <h2>Ready to Boost Your Engagement?</h2>
+          <p>Join site owners using Instant Emoji Reactions Pro to turn passive readers into active participants. Instant setup, automatic migration from the free version, and secure checkout.</p>
+          <a href="https://checkout.freemius.com/plugin/32816/plan/54244/" target="_blank" class="ier-btn-buy">
+            <i class="bi bi-cart-check"></i> Buy Instant Emoji Reactions Pro
+          </a>
+          <p class="cta-guarantee"><i class="bi bi-shield-check"></i> Risk-free with a 7-day money-back guarantee</p>
+          <p class="cta-contact"><i class="bi bi-envelope"></i> Have a question or want to discuss anything before buying? Reach out anytime at <a href="mailto:usamakhalid847@gmail.com">usamakhalid847@gmail.com</a> — I personally reply to every message.</p>
+        </div>
+      </div>
+    </section><!-- /Final CTA Section -->
+
+  </main>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://usamakhalid847.github.io/portfolio/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://usamakhalid847.github.io/portfolio/assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://usamakhalid847.github.io/portfolio/assets/vendor/aos/aos.js"></script>
+  <script src="https://usamakhalid847.github.io/portfolio/assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="https://usamakhalid847.github.io/portfolio/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="https://usamakhalid847.github.io/portfolio/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="https://usamakhalid847.github.io/portfolio/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="https://usamakhalid847.github.io/portfolio/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="https://usamakhalid847.github.io/portfolio/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="https://usamakhalid847.github.io/portfolio/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="https://usamakhalid847.github.io/portfolio/assets/js/main.js"></script>
+
+</body>
+
+</html>
