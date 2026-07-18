@@ -155,12 +155,22 @@
       color: #55606a;
       max-width: 760px;
       margin: 0 auto 28px;
+      text-wrap: pretty;
     }
 
     .ier-hero .hero-emojis {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 14px;
       font-size: 34px;
-      letter-spacing: 8px;
+      letter-spacing: 0;
       margin-bottom: 22px;
+    }
+
+    .ier-hero .hero-emojis span {
+      line-height: 1;
+      flex: 0 0 auto;
     }
 
     .ier-hero-meta {
@@ -435,8 +445,24 @@
 
     .ier-pricing-card .alt-prices {
       font-size: 13.5px;
-      color: #8a939c;
+      color: #4a545e;
       margin-bottom: 24px;
+      line-height: 1.55;
+    }
+
+    .ier-pricing-card .alt-prices .was {
+      color: #a0a8b0;
+      text-decoration: line-through;
+    }
+
+    .ier-pricing-card .alt-prices .now {
+      color: #1f8a4c;
+      font-weight: 600;
+    }
+
+    .ier-pricing-card .alt-prices .sep {
+      color: #c5ccd3;
+      margin: 0 4px;
     }
 
     .ier-pricing-card ul {
@@ -624,29 +650,181 @@
       margin-right: 6px;
     }
 
-    .ier-cta .cta-contact {
-      margin: 22px auto 0;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-      font-size: 14.5px;
-      color: rgba(255, 255, 255, 0.85);
-      max-width: 560px;
+    .ier-contact {
+      background: #f5fbfe;
     }
 
-    .ier-cta .cta-contact a {
+    .ier-contact-card {
+      background: #fff;
+      border: 1px solid #e3edf3;
+      border-radius: 16px;
+      padding: 42px 36px;
+      text-align: center;
+      box-shadow: 0 10px 32px rgba(23, 59, 108, 0.08);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .ier-contact-card .contact-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(20, 157, 221, 0.12);
+      color: var(--ier-accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .ier-contact-card h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--ier-dark);
+      margin-bottom: 12px;
+    }
+
+    .ier-contact-card .contact-lead {
+      font-size: 16px;
+      color: #5a646e;
+      max-width: 520px;
+      margin: 0 auto 26px;
+    }
+
+    .ier-contact-card .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--ier-dark) 0%, #0f4c81 60%, var(--ier-accent) 100%);
       color: #fff;
+      font-family: var(--heading-font, "Raleway", sans-serif);
+      font-size: 18px;
+      font-weight: 700;
+      padding: 16px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 10px 28px rgba(20, 157, 221, 0.3);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      word-break: break-all;
+    }
+
+    .ier-contact-card .contact-email:hover {
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(20, 157, 221, 0.4);
+    }
+
+    .ier-contact-card .contact-note {
+      margin-top: 18px;
+      font-size: 14px;
+      color: #8a939c;
+    }
+
+    .ier-contact-card .contact-note a {
+      color: var(--ier-accent);
       font-weight: 600;
       text-decoration: underline;
     }
 
-    .ier-cta .cta-contact a:hover {
-      color: rgba(255, 255, 255, 0.8);
+    @media (max-width: 768px) {
+      .ier-contact-card {
+        padding: 32px 20px;
+      }
+
+      .ier-contact-card h2 {
+        font-size: 24px;
+      }
+
+      .ier-contact-card .contact-email {
+        font-size: 15px;
+        padding: 14px 18px;
+        width: 100%;
+        justify-content: center;
+      }
     }
 
-    /* Keep the long email address readable in the sidebar menu */
-    #navmenu a[href^="mailto:"] {
-      font-size: 13px;
-      letter-spacing: -0.2px;
+    /* Professional sidebar brand */
+    #header.header {
+      padding: 0 18px 24px;
+    }
+
+    #header .ier-sidebar-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      text-decoration: none;
+      margin: 28px 0 0;
+      padding: 0 4px 22px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    #header .ier-sidebar-brand:hover {
+      opacity: 0.95;
+    }
+
+    #header .ier-brand-eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--ier-accent);
+      margin-bottom: 10px;
+    }
+
+    #header .ier-plugin-title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin: 0 !important;
+      padding: 0;
+      font-size: 18px !important;
+      font-weight: 700 !important;
+      line-height: 1.25 !important;
+      color: #fff !important;
+    }
+
+    #header .ier-brand-name {
+      display: block;
+      max-width: 200px;
+    }
+
+    #header .ier-brand-pro {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--ier-accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 50px;
+      line-height: 1;
+    }
+
+    #header .navmenu {
+      padding-top: 18px;
+    }
+
+    #header .navmenu ul {
+      gap: 2px;
+    }
+
+    #header .navmenu a {
+      border-radius: 8px;
+      padding: 11px 12px;
+      font-size: 14.5px;
+      font-weight: 500;
+    }
+
+    #header .navmenu a:hover,
+    #header .navmenu .active {
+      background: rgba(20, 157, 221, 0.12);
     }
 
     /* Screenshot slider polish */
@@ -660,17 +838,335 @@
       background: #f5fbfe;
     }
 
+    .ier-screenshots .portfolio-details-slider .swiper-pagination {
+      position: relative;
+      bottom: auto;
+      margin-top: 22px;
+    }
+
+    .ier-screenshots .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+      width: 13px;
+      height: 13px;
+    }
+
+    /* Limited-time offer */
+    .ier-offer-bar {
+      background: linear-gradient(90deg, #0f4c81 0%, #149ddd 55%, #0f4c81 100%);
+      color: #fff;
+      padding: 12px 16px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 997;
+      box-shadow: 0 4px 18px rgba(15, 76, 129, 0.28);
+    }
+
+    .ier-offer-bar-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px 18px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .ier-offer-bar .offer-text {
+      font-size: 14.5px;
+      font-weight: 600;
+      margin: 0;
+      line-height: 1.35;
+    }
+
+    .ier-offer-bar .offer-text strong {
+      color: #ffe08a;
+      letter-spacing: 0.5px;
+    }
+
+    /* Roboto keeps 0 the same size as other digits (Raleway zeros look smaller) */
+    .ier-coupon-code {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px dashed rgba(255, 255, 255, 0.7);
+      border-radius: 8px;
+      padding: 5px 12px;
+      font-family: "Roboto", "Segoe UI", sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      font-variant-numeric: tabular-nums lining-nums;
+      font-feature-settings: "tnum" 1, "lnum" 1;
+      color: #fff;
+      white-space: nowrap;
+      word-break: keep-all;
+      overflow-wrap: normal;
+    }
+
+    .ier-coupon-code .coupon-text {
+      display: inline-block;
+      white-space: nowrap;
+      word-break: keep-all;
+    }
+
+    .ier-countdown {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+      gap: 5px;
+    }
+
+    .ier-countdown .cd-unit {
+      background: rgba(0, 0, 0, 0.22);
+      border-radius: 8px;
+      min-width: 52px;
+      padding: 5px 6px 4px;
+      text-align: center;
+    }
+
+    .ier-countdown .cd-unit .cd-num {
+      display: block;
+      font-family: "Roboto", "Segoe UI", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: 0;
+      font-variant-numeric: tabular-nums lining-nums;
+      font-feature-settings: "tnum" 1, "lnum" 1;
+      color: #fff;
+    }
+
+    .ier-countdown .cd-unit .cd-label {
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: rgba(255, 255, 255, 0.75);
+      margin-top: 1px;
+    }
+
+    .ier-countdown .cd-sep {
+      font-family: "Roboto", "Segoe UI", sans-serif;
+      font-weight: 700;
+      opacity: 0.7;
+      margin-bottom: 10px;
+    }
+
+    .ier-offer-bar .offer-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff;
+      color: #0f4c81;
+      font-weight: 700;
+      font-size: 13.5px;
+      padding: 8px 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .ier-offer-bar .offer-cta:hover {
+      background: #ffe08a;
+      color: #0f4c81;
+    }
+
+    .ier-hero-offer {
+      background: #fff8e8;
+      border: 1px solid #f0d48a;
+      border-radius: 14px;
+      padding: 18px 22px;
+      max-width: 720px;
+      margin: 0 auto 28px;
+    }
+
+    .ier-hero-offer .offer-title {
+      font-family: var(--heading-font, "Raleway", sans-serif);
+      font-size: 18px;
+      font-weight: 800;
+      color: #a15c00;
+      margin-bottom: 6px;
+    }
+
+    .ier-hero-offer .offer-title i {
+      margin-right: 6px;
+    }
+
+    .ier-hero-offer p {
+      font-size: 14.5px;
+      color: #6b5530;
+      margin-bottom: 12px;
+    }
+
+    .ier-hero-offer .offer-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px 14px;
+    }
+
+    .ier-hero-offer .ier-coupon-code {
+      background: #fff;
+      border-color: #d4a017;
+      color: #a15c00;
+    }
+
+    .ier-pricing-card .price-was {
+      font-size: 15px;
+      color: #a0a8b0;
+      text-decoration: line-through;
+      margin-bottom: 2px;
+    }
+
+    .ier-pricing-card .sale-badge {
+      display: inline-block;
+      background: #e8f8ee;
+      color: #1f8a4c;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 50px;
+      margin-bottom: 10px;
+    }
+
+    .ier-pricing-card .coupon-note {
+      background: #fff8e8;
+      border: 1px dashed #d4a017;
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin: 0 0 18px;
+      font-size: 13px;
+      color: #6b5530;
+      text-align: center;
+    }
+
+    .ier-pricing-card .coupon-note strong {
+      font-family: "Roboto", "Segoe UI", sans-serif;
+      font-variant-numeric: tabular-nums lining-nums;
+      color: #a15c00;
+      letter-spacing: 0.8px;
+    }
+
+    .ier-pricing-offer-banner {
+      background: linear-gradient(135deg, #fff8e8 0%, #fff 100%);
+      border: 1px solid #f0d48a;
+      border-radius: 14px;
+      padding: 22px 24px;
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .ier-pricing-offer-banner h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #a15c00;
+      margin-bottom: 8px;
+    }
+
+    .ier-pricing-offer-banner p {
+      font-size: 14.5px;
+      color: #6b5530;
+      margin-bottom: 14px;
+    }
+
+    .ier-pricing-offer-banner .offer-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 12px 18px;
+    }
+
+    .ier-pricing-offer-banner .ier-coupon-code {
+      background: #fff;
+      border-color: #d4a017;
+      color: #a15c00;
+    }
+
+    .ier-pricing-offer-banner .offer-ends {
+      font-size: 13.5px;
+      color: #6b5530;
+      margin: 0;
+    }
+
+    .ier-pricing-offer-banner .offer-ends strong {
+      font-family: "Roboto", "Segoe UI", sans-serif;
+      font-variant-numeric: tabular-nums lining-nums;
+      color: #a15c00;
+    }
+
+    .ier-cta .cta-offer {
+      margin: 18px auto 0;
+      max-width: 560px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px dashed rgba(255, 255, 255, 0.45);
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .ier-cta .cta-offer strong {
+      font-family: "Roboto", "Segoe UI", sans-serif;
+      font-variant-numeric: tabular-nums lining-nums;
+      color: #ffe08a;
+      letter-spacing: 1px;
+    }
+
+    [data-ier-countdown-inline] {
+      font-family: "Roboto", "Segoe UI", sans-serif;
+      font-variant-numeric: tabular-nums lining-nums;
+      font-feature-settings: "tnum" 1, "lnum" 1;
+      white-space: nowrap;
+    }
+
     .section.light-background-alt {
       background: #f5fbfe;
     }
 
+    @media (max-width: 991px) {
+      .ier-offer-bar {
+        position: relative;
+        top: auto;
+      }
+
+      .ier-offer-bar-inner {
+        gap: 10px 12px;
+      }
+    }
+
     @media (max-width: 768px) {
       .ier-hero h1 {
-        font-size: 30px;
+        font-size: 28px;
       }
 
       .ier-hero .lead {
-        font-size: 16px;
+        font-size: 15px;
+        line-height: 1.55;
+        padding: 0 6px;
+        max-width: 22.5em;
+      }
+
+      .ier-hero .hero-emojis {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 260px;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 12px 10px;
+        font-size: 28px;
+        justify-items: center;
+      }
+
+      .ier-hero .hero-emojis span:nth-child(5) {
+        grid-column: 2;
+      }
+
+      .ier-hero .hero-emojis span:nth-child(6) {
+        grid-column: 3;
       }
 
       .ier-cta {
@@ -679,6 +1175,82 @@
 
       .ier-cta h2 {
         font-size: 24px;
+      }
+
+      .ier-offer-bar {
+        padding: 14px 12px;
+      }
+
+      .ier-offer-bar-inner {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .ier-offer-bar .offer-text {
+        font-size: 13px;
+        max-width: 280px;
+      }
+
+      .ier-countdown {
+        gap: 4px;
+      }
+
+      .ier-countdown .cd-unit {
+        min-width: 44px;
+        padding: 4px 5px 3px;
+      }
+
+      .ier-countdown .cd-unit .cd-num {
+        font-size: 15px;
+      }
+
+      .ier-countdown .cd-sep {
+        margin-bottom: 8px;
+      }
+
+      .ier-hero-offer {
+        padding: 16px 14px;
+        margin-bottom: 22px;
+      }
+
+      .ier-hero-offer .offer-title {
+        font-size: 16px;
+      }
+
+      .ier-pricing-offer-banner {
+        padding: 18px 14px;
+      }
+
+      .ier-btn-buy,
+      .ier-btn-outline {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .ier-countdown .cd-unit {
+        min-width: 40px;
+      }
+
+      .ier-countdown .cd-unit .cd-num {
+        font-size: 14px;
+      }
+
+      .ier-countdown .cd-unit .cd-label {
+        font-size: 9px;
+      }
+
+      .ier-coupon-code {
+        font-size: 13px;
+        letter-spacing: 0.4px;
+      }
+
+      .ier-offer-bar .ier-coupon-code,
+      .ier-offer-bar .ier-countdown,
+      .ier-offer-bar .offer-cta {
+        flex-shrink: 0;
       }
     }
   </style>
@@ -689,21 +1261,13 @@
   <header id="header" class="header dark-background d-flex flex-column">
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
-    <div class="profile-img">
-      <img src="https://usamakhalid847.github.io/portfolio/assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
-    </div>
-
-    <a href="https://usamakhalid847.github.io/portfolio/" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="https://usamakhalid847.github.io/portfolio/assets/img/logo.png" alt=""> -->
-      <h1 class="sitename">Usama Khalid</h1>
+    <a href="#pricing" class="logo ier-sidebar-brand">
+      <span class="ier-brand-eyebrow">Premium Plugin</span>
+      <h1 class="sitename ier-plugin-title">
+        <span class="ier-brand-name">Instant Emoji Reactions</span>
+        <span class="ier-brand-pro">Pro</span>
+      </h1>
     </a>
-
-    <div class="social-links text-center">
-      <a href="https://www.linkedin.com/in/usama-khalid-84677720b/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      <a href="https://profiles.wordpress.org/usamakhalid14/" target="_blank" class="wordpress"><i class="bi bi-wordpress"></i></a>
-      <a href="https://github.com/usamakhalid847" target="_blank" class="github"><i class="bi bi-github"></i></a>
-    </div>
 
     <nav id="navmenu" class="navmenu">
       <ul>
@@ -712,7 +1276,7 @@
         <li><a href="#comparison"><i class="bi bi-table navicon"></i> Free vs Pro</a></li>
         <li><a href="#pricing"><i class="bi bi-tag navicon"></i> Pricing</a></li>
         <li><a href="#faq"><i class="bi bi-question-circle navicon"></i> FAQ</a></li>
-        <li><a href="mailto:usamakhalid847@gmail.com"><i class="bi bi-envelope navicon"></i> usamakhalid847@gmail.com</a></li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
 
@@ -720,20 +1284,49 @@
 
   <main class="main">
 
+    <!-- Limited-time Offer Bar -->
+    <div class="ier-offer-bar" role="region" aria-label="Limited time offer">
+      <div class="ier-offer-bar-inner">
+        <p class="offer-text">🔥 Limited-time launch offer — <strong>50% OFF</strong> with code</p>
+        <span class="ier-coupon-code"><i class="bi bi-ticket-perforated"></i><span class="coupon-text">WELCOME50</span></span>
+        <div class="ier-countdown" data-ier-countdown aria-live="polite">
+          <div class="cd-unit"><span class="cd-num" data-cd="days">10</span><span class="cd-label">Days</span></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-unit"><span class="cd-num" data-cd="hours">00</span><span class="cd-label">Hrs</span></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-unit"><span class="cd-num" data-cd="minutes">00</span><span class="cd-label">Min</span></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-unit"><span class="cd-num" data-cd="seconds">00</span><span class="cd-label">Sec</span></div>
+        </div>
+        <a href="#pricing" class="offer-cta"><i class="bi bi-lightning-charge-fill"></i> Claim 50% Off</a>
+      </div>
+    </div>
+
     <!-- Hero Section -->
     <section class="ier-hero section">
       <div class="container text-center" data-aos="fade-up">
         <span class="badge-version">Premium WordPress Plugin</span>
-        <div class="hero-emojis">👍 ❤️ 😂 😮 😢 😡</div>
-        <h1>Instant Emoji Reactions <span>Pro</span></h1>
+        <div class="hero-emojis" aria-hidden="true">
+          <span>👍</span><span>❤️</span><span>😂</span><span>😮</span><span>😢</span><span>😡</span>
+        </div>
+        <h1>Instant Emoji Reactions&nbsp;<span>Pro</span></h1>
         <p class="lead">
           Boost engagement on your WordPress site with AJAX-powered emoji reactions on posts, pages,
           WooCommerce products, bbPress forums and BuddyPress activity — complete with custom emoji sets,
-          a powerful analytics dashboard, and full page-cache compatibility.
+          a powerful analytics dashboard, and full&nbsp;page-cache&nbsp;compatibility.
         </p>
+
+        <div class="ier-hero-offer">
+          <div class="offer-title"><i class="bi bi-fire"></i> Don't miss this limited-time deal</div>
+          <p>Get <strong>50% OFF</strong> Instant Emoji Reactions Pro. Use the code below at checkout — the countdown at the top of the page shows how much time is left.</p>
+          <div class="offer-row">
+            <span class="ier-coupon-code"><i class="bi bi-ticket-perforated"></i><span class="coupon-text">WELCOME50</span></span>
+          </div>
+        </div>
+
         <div class="d-flex flex-wrap justify-content-center gap-3">
-          <a href="https://checkout.freemius.com/plugin/32816/plan/54244/" target="_blank" class="ier-btn-buy">
-            <i class="bi bi-cart-check"></i> Buy Pro Now
+          <a href="https://checkout.freemius.com/plugin/32816/plan/54244/?coupon=WELCOME50" target="_blank" class="ier-btn-buy">
+            <i class="bi bi-cart-check"></i> Buy Pro — 50% Off
           </a>
           <a href="https://wordpress.org/plugins/instant-emoji-reactions/" target="_blank" class="ier-btn-outline">
             <i class="bi bi-wordpress"></i> Try Free Version
@@ -1215,8 +1808,8 @@
         </div>
 
         <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="150">
-          <a href="https://checkout.freemius.com/plugin/32816/plan/54244/" target="_blank" class="ier-btn-buy">
-            <i class="bi bi-cart-check"></i> Upgrade to Pro
+          <a href="https://checkout.freemius.com/plugin/32816/plan/54244/?coupon=WELCOME50" target="_blank" class="ier-btn-buy">
+            <i class="bi bi-cart-check"></i> Upgrade to Pro — 50% Off
           </a>
         </div>
       </div>
@@ -1230,22 +1823,45 @@
           <p>All plans include every Pro feature. Pick the plan that matches the number of sites you manage — monthly, annual and lifetime billing available.</p>
         </div>
 
+        <div class="ier-pricing-offer-banner" data-aos="fade-up" data-aos-delay="50">
+          <h3>⏰ Limited-Time: 50% Off All Plans</h3>
+          <p>Use coupon code <strong>WELCOME50</strong> at checkout. When the offer timer ends, the discount disappears — lock in your savings now.</p>
+          <div class="offer-row">
+            <span class="ier-coupon-code"><i class="bi bi-ticket-perforated"></i><span class="coupon-text">WELCOME50</span></span>
+            <p class="offer-ends">Ends in
+              <strong data-ier-countdown-inline>
+                <span data-cd="days">10</span>d
+                <span data-cd="hours">00</span>h
+                <span data-cd="minutes">00</span>m
+                <span data-cd="seconds">00</span>s
+              </strong>
+            </p>
+          </div>
+        </div>
+
         <div class="row gy-4 justify-content-center">
 
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="ier-pricing-card">
               <h3>Personal</h3>
               <div class="plan-desc">Perfect for a single blog or business site</div>
-              <div class="price"><span class="amount">$3</span><span class="cents">.99</span><span class="period">/month</span></div>
-              <div class="alt-prices">or $29.99/year &nbsp;•&nbsp; $49.99 lifetime</div>
+              <div class="sale-badge">50% OFF with WELCOME50</div>
+              <div class="price-was">$3.99/month</div>
+              <div class="price"><span class="amount">$1</span><span class="cents">.99</span><span class="period">/month</span></div>
+              <div class="alt-prices">
+                <span class="was">$29.99/year</span> <span class="now">$14.99/year</span>
+                <span class="sep">•</span>
+                <span class="was">$49.99 lifetime</span> <span class="now">$24.99 lifetime</span>
+              </div>
+              <div class="coupon-note">Apply code <strong>WELCOME50</strong> at checkout</div>
               <ul>
                 <li><i class="bi bi-check-lg"></i> All Pro features included</li>
                 <li><i class="bi bi-check-lg"></i> 1 website</li>
                 <li><i class="bi bi-check-lg"></i> Updates &amp; priority support</li>
                 <li><i class="bi bi-check-lg"></i> Secure checkout via Freemius</li>
               </ul>
-              <a href="https://checkout.freemius.com/plugin/32816/plan/54244/" target="_blank" class="ier-btn-outline">
-                <i class="bi bi-cart"></i> Get Personal
+              <a href="https://checkout.freemius.com/plugin/32816/plan/54244/?coupon=WELCOME50" target="_blank" class="ier-btn-outline">
+                <i class="bi bi-cart"></i> Get Personal — 50% Off
               </a>
             </div>
           </div>
@@ -1255,16 +1871,23 @@
               <span class="popular-tag">Most Popular</span>
               <h3>Business</h3>
               <div class="plan-desc">Great for growing businesses &amp; communities</div>
-              <div class="price"><span class="amount">$6</span><span class="cents">.99</span><span class="period">/month</span></div>
-              <div class="alt-prices">or $49.99/year &nbsp;•&nbsp; $79.99 lifetime</div>
+              <div class="sale-badge">50% OFF with WELCOME50</div>
+              <div class="price-was">$6.99/month</div>
+              <div class="price"><span class="amount">$3</span><span class="cents">.49</span><span class="period">/month</span></div>
+              <div class="alt-prices">
+                <span class="was">$49.99/year</span> <span class="now">$24.99/year</span>
+                <span class="sep">•</span>
+                <span class="was">$79.99 lifetime</span> <span class="now">$39.99 lifetime</span>
+              </div>
+              <div class="coupon-note">Apply code <strong>WELCOME50</strong> at checkout</div>
               <ul>
                 <li><i class="bi bi-check-lg"></i> All Pro features included</li>
                 <li><i class="bi bi-check-lg"></i> 3 websites</li>
                 <li><i class="bi bi-check-lg"></i> Updates &amp; priority support</li>
                 <li><i class="bi bi-check-lg"></i> Secure checkout via Freemius</li>
               </ul>
-              <a href="https://checkout.freemius.com/plugin/32816/plan/54245/" target="_blank" class="ier-btn-buy">
-                <i class="bi bi-cart-check"></i> Get Business
+              <a href="https://checkout.freemius.com/plugin/32816/plan/54245/?coupon=WELCOME50" target="_blank" class="ier-btn-buy">
+                <i class="bi bi-cart-check"></i> Get Business — 50% Off
               </a>
             </div>
           </div>
@@ -1273,16 +1896,23 @@
             <div class="ier-pricing-card">
               <h3>Agency</h3>
               <div class="plan-desc">Built for agencies managing client sites</div>
-              <div class="price"><span class="amount">$9</span><span class="cents">.99</span><span class="period">/month</span></div>
-              <div class="alt-prices">or $69.99/year &nbsp;•&nbsp; $99.99 lifetime</div>
+              <div class="sale-badge">50% OFF with WELCOME50</div>
+              <div class="price-was">$9.99/month</div>
+              <div class="price"><span class="amount">$4</span><span class="cents">.99</span><span class="period">/month</span></div>
+              <div class="alt-prices">
+                <span class="was">$69.99/year</span> <span class="now">$34.99/year</span>
+                <span class="sep">•</span>
+                <span class="was">$99.99 lifetime</span> <span class="now">$49.99 lifetime</span>
+              </div>
+              <div class="coupon-note">Apply code <strong>WELCOME50</strong> at checkout</div>
               <ul>
                 <li><i class="bi bi-check-lg"></i> All Pro features included</li>
                 <li><i class="bi bi-check-lg"></i> Unlimited websites</li>
                 <li><i class="bi bi-check-lg"></i> Updates &amp; priority support</li>
                 <li><i class="bi bi-check-lg"></i> Secure checkout via Freemius</li>
               </ul>
-              <a href="https://checkout.freemius.com/plugin/32816/plan/54246/" target="_blank" class="ier-btn-outline">
-                <i class="bi bi-cart"></i> Get Agency
+              <a href="https://checkout.freemius.com/plugin/32816/plan/54246/?coupon=WELCOME50" target="_blank" class="ier-btn-outline">
+                <i class="bi bi-cart"></i> Get Agency — 50% Off
               </a>
             </div>
           </div>
@@ -1290,7 +1920,7 @@
         </div>
 
         <div class="ier-pricing-note" data-aos="fade-up" data-aos-delay="250">
-          <i class="bi bi-shield-check"></i> Every plan comes with a 7-day money-back guarantee. Payments are processed securely by Freemius — cancel or switch plans anytime from your account.
+          <i class="bi bi-ticket-perforated"></i> Coupon <strong>WELCOME50</strong> is pre-filled on checkout links — and every plan still includes a 7-day money-back guarantee.
         </div>
       </div>
     </section><!-- /Pricing Section -->
@@ -1499,6 +2129,19 @@
                 </div>
               </div>
 
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">
+                    How do I get the 50% WELCOME50 discount?
+                  </button>
+                </h3>
+                <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#ierFaqAccordion">
+                  <div class="accordion-body">
+                    Use coupon code <strong>WELCOME50</strong> during this limited-time launch offer. The Buy / checkout buttons on this page already include the coupon, so it should be applied automatically — otherwise enter <strong>WELCOME50</strong> manually at Freemius checkout. Act before the countdown ends to lock in 50% off.
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -1511,14 +2154,42 @@
         <div class="ier-cta">
           <h2>Ready to Boost Your Engagement?</h2>
           <p>Join site owners using Instant Emoji Reactions Pro to turn passive readers into active participants. Instant setup, automatic migration from the free version, and secure checkout.</p>
-          <a href="https://checkout.freemius.com/plugin/32816/plan/54244/" target="_blank" class="ier-btn-buy">
-            <i class="bi bi-cart-check"></i> Buy Instant Emoji Reactions Pro
+          <div class="cta-offer">
+            🔥 Limited-time: use <strong>WELCOME50</strong> for <strong>50% OFF</strong> —
+            ends in
+            <span data-ier-countdown-inline>
+              <span data-cd="days">10</span>d
+              <span data-cd="hours">00</span>h
+              <span data-cd="minutes">00</span>m
+              <span data-cd="seconds">00</span>s
+            </span>
+          </div>
+          <a href="https://checkout.freemius.com/plugin/32816/plan/54244/?coupon=WELCOME50" target="_blank" class="ier-btn-buy" style="margin-top: 22px;">
+            <i class="bi bi-cart-check"></i> Claim 50% Off Now
           </a>
           <p class="cta-guarantee"><i class="bi bi-shield-check"></i> Risk-free with a 7-day money-back guarantee</p>
-          <p class="cta-contact"><i class="bi bi-envelope"></i> Have a question or want to discuss anything before buying? Reach out anytime at <a href="mailto:usamakhalid847@gmail.com">usamakhalid847@gmail.com</a> — I personally reply to every message.</p>
         </div>
       </div>
     </section><!-- /Final CTA Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="section ier-contact">
+      <div class="container" data-aos="fade-up">
+        <div class="ier-contact-card">
+          <div class="contact-icon"><i class="bi bi-chat-dots"></i></div>
+          <h2>Contact Us</h2>
+          <p class="contact-lead">
+            Have a question, need support, or want to discuss anything before buying?
+            Send a message anytime — I personally reply to every email.
+          </p>
+          <a href="mailto:usamakhalid847@gmail.com" class="contact-email">
+            <i class="bi bi-envelope-fill"></i>
+            usamakhalid847@gmail.com
+          </a>
+          <p class="contact-note">Prefer the free plugin forum? You can also reach out via the <a href="https://wordpress.org/support/plugin/instant-emoji-reactions/" target="_blank" rel="noopener">WordPress.org support threads</a>.</p>
+        </div>
+      </div>
+    </section><!-- /Contact Section -->
 
   </main>
 
@@ -1542,6 +2213,62 @@
 
   <!-- Main JS File -->
   <script src="https://usamakhalid847.github.io/portfolio/assets/js/main.js"></script>
+
+  <!-- Perpetual 10-day offer countdown (resets every 4 days) -->
+  <script>
+    (function () {
+      var CYCLE_MS = 4 * 24 * 60 * 60 * 1000;   // reset interval
+      var OFFER_MS = 10 * 24 * 60 * 60 * 1000;  // displayed offer window
+      var EPOCH = Date.UTC(2026, 6, 18, 0, 0, 0); // fixed sync point (Jul 18, 2026 UTC)
+
+      function pad(n) {
+        return n < 10 ? '0' + n : String(n);
+      }
+
+      function getRemainingMs() {
+        var now = Date.now();
+        var elapsed = ((now - EPOCH) % CYCLE_MS + CYCLE_MS) % CYCLE_MS;
+        return OFFER_MS - elapsed; // 10d → ~6d over 4 days, then snaps back to 10d
+      }
+
+      function partsFromMs(ms) {
+        var total = Math.max(0, Math.floor(ms / 1000));
+        return {
+          days: Math.floor(total / 86400),
+          hours: Math.floor((total % 86400) / 3600),
+          minutes: Math.floor((total % 3600) / 60),
+          seconds: total % 60
+        };
+      }
+
+      function render() {
+        var p = partsFromMs(getRemainingMs());
+        document.querySelectorAll('[data-ier-countdown]').forEach(function (root) {
+          var days = root.querySelector('[data-cd="days"]');
+          var hours = root.querySelector('[data-cd="hours"]');
+          var minutes = root.querySelector('[data-cd="minutes"]');
+          var seconds = root.querySelector('[data-cd="seconds"]');
+          if (days) days.textContent = String(p.days);
+          if (hours) hours.textContent = pad(p.hours);
+          if (minutes) minutes.textContent = pad(p.minutes);
+          if (seconds) seconds.textContent = pad(p.seconds);
+        });
+        document.querySelectorAll('[data-ier-countdown-inline]').forEach(function (root) {
+          var days = root.querySelector('[data-cd="days"]');
+          var hours = root.querySelector('[data-cd="hours"]');
+          var minutes = root.querySelector('[data-cd="minutes"]');
+          var seconds = root.querySelector('[data-cd="seconds"]');
+          if (days) days.textContent = String(p.days);
+          if (hours) hours.textContent = pad(p.hours);
+          if (minutes) minutes.textContent = pad(p.minutes);
+          if (seconds) seconds.textContent = pad(p.seconds);
+        });
+      }
+
+      render();
+      setInterval(render, 1000);
+    })();
+  </script>
 
 </body>
 
