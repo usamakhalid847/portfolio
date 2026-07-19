@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
 
-# Only Instant Emoji Reactions Pro is submitted for indexing (see sitemap).
-# All other HTML pages use <meta name="robots" content="noindex, nofollow">.
-
 Sitemap: https://usamakhalid847.github.io/portfolio/sitemap.xml
+Sitemap: https://usamakhalid847.github.io/portfolio/sitemap.txt
